@@ -16,3 +16,11 @@ $username //pulls username from url
 
 Scheme:
 index.php -> (VARIABLES) -> profile.php
+
+Htaccess:<br>
+Options -Indexes +FollowSymLinks<br>
+RewriteEngine on<br>
+RewriteRule ^ajax$ ajax.php [L, NC, QSA]<br>
+RewriteCond %{REQUEST_FILENAME} !-d<br>
+RewriteCond %{REQUEST_FILENAME} !-f<br>
+RewriteRule ^(.+)$ index.php?page=$1 [QSA,L]
